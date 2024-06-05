@@ -140,8 +140,31 @@ legend("topright",
 
 ```
 
+## Summary statistics of Sepal Length and Sepal Width
 
+::: columns
+::: {.column width="50%"}
+Summary of Petal Length:
 
+```{r}
+#| label: mean-speed
+#| echo: false
+as.data.frame(t(summary(iris$Petal.Length)))[,-1]
+```
+:::
+
+::: {.column width="50%"}
+Summary of Petal Width:
+
+```{r}
+#| label: hist-speed
+#| echo: false
+as.data.frame(t(summary(iris$Petal.Width)))[,-1]
+```
+:::
+:::
+
+\vspace{4 mm}
 
 
 
