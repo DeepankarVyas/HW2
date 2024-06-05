@@ -109,8 +109,36 @@ A quick analysis of the graph is as follows:-
 3. [Setosa]{style="color: blue;"} generally has lower Petal length and Petal width comparatively. [Versicolor]{style="color: red;"} has higher Petal Length and Petal width compared to [Setosa]{style="color: blue;"} but generally lesser than [Virginica]{style="color: green;"}. [Viriginica]{style="color: green;"} generally tends to have the highest Petal legth and width amongst the `r length(table(iris$Species))` species considered.\vspace{2 mm}
 4. More details about the dataset can be found [here](https://en.wikipedia.org/wiki/Iris_flower_data_set)
 
+## Sepal Length vs Sepal Width - plot
+
+```{r}
+#| label: Plotting
+#| echo: false
+#| eval: true
+
+# Define the colors for each species
+cols <- c("blue", "red", "green")
+
+# Create a color vector based on species
+species_colors <- cols[as.numeric(iris$Species)]
+
+# Create the plot
+plot(iris$Sepal.Length, iris$Sepal.Width, 
+     xlab = "Sepal Length", 
+     ylab = "Sepal Width", 
+     main = "Sepal length vs width", 
+     col = species_colors, 
+     pch = 19)
+
+# Add legend
+legend("topright", 
+       legend = levels(iris$Species), 
+       col = cols, 
+       pch = 19, 
+       title = "Species")
 
 
+```
 
 
 
