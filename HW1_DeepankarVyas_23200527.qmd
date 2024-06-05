@@ -81,7 +81,7 @@ Here, we have plotted a scatter plot between Petal length and Petal width, colou
 Summary of Petal Length:
 
 ```{r}
-#| label: mean-speed
+#| label: summary petal length
 #| echo: false
 as.data.frame(t(summary(iris$Petal.Length)))[,-1]
 ```
@@ -91,7 +91,7 @@ as.data.frame(t(summary(iris$Petal.Length)))[,-1]
 Summary of Petal Width:
 
 ```{r}
-#| label: hist-speed
+#| label: summary petal width
 #| echo: false
 as.data.frame(t(summary(iris$Petal.Width)))[,-1]
 ```
@@ -112,7 +112,7 @@ A quick analysis of the graph is as follows:-
 ## Sepal Length vs Sepal Width - plot
 
 ```{r}
-#| label: Plotting
+#| label: Plotting-sepal
 #| echo: false
 #| eval: true
 
@@ -144,22 +144,22 @@ legend("topright",
 
 ::: columns
 ::: {.column width="50%"}
-Summary of Petal Length:
+Summary of Sepal Length:
 
 ```{r}
-#| label: mean-speed
+#| label: summary-sepal length
 #| echo: false
-as.data.frame(t(summary(iris$Petal.Length)))[,-1]
+as.data.frame(t(summary(iris$Sepal.Length)))[,-1]
 ```
 :::
 
 ::: {.column width="50%"}
-Summary of Petal Width:
+Summary of Sepal Width:
 
 ```{r}
-#| label: hist-speed
+#| label: summary sepal width
 #| echo: false
-as.data.frame(t(summary(iris$Petal.Width)))[,-1]
+as.data.frame(t(summary(iris$Sepal.Width)))[,-1]
 ```
 :::
 :::
