@@ -1,0 +1,123 @@
+---
+title: "STAT40830 - Adv Data Prog With R (online)"
+subtitle: "HW Assignment 1"
+author: "Deepankar Vyas , 23200527"
+date: today
+date-format: long
+format:
+  revealjs: 
+    toc: true 
+    slide-number: true
+    footer: ""
+    incremental: false
+    fragments: true
+    chalkboard: false
+    menu: true
+    scrollable: true
+    preview-links: false
+    embed-resources: true
+    fontsize: 28pt
+    theme: "moon" 
+---
+
+## Question Statement
+
+\center 
+
+***Create a neat Quarto document or presentation. In the document/presentation, you must do a plot on a dataset that can be found on any R package and include some text explaining what you plotted. The file does not need to be extensive. If you wish to add some extra text, consider adding an explanation of your approach, some descriptive statistics of the variables used in the graph and a line or two introducing the dataset as part of an introduction.***
+
+## IRIS Dataset
+
+```{r}
+#| label: Importing dataset
+#| eval: true
+#| echo: false
+
+data(iris)
+
+```
+
+- The famous (Fisher's or Anderson's) iris data set gives the measurements in centimeters of different variables. \vspace{2 mm}
+- The variables are - sepal length and width and petal length and width, respectively, for `r nrow(iris)` flowers from each of `r length(table(iris$Species))` species of iris. \vspace{2 mm}
+- The species are Iris [setosa]{style="color: blue;"}, [versicolor]{style="color: red;"}, and [virginica]{style="color: green;"}.
+
+## Petal Length Vs Petal Width 
+
+```{r}
+#| label: Plotting
+#| echo: false
+#| eval: true
+
+# Define the colors for each species
+cols <- c("blue", "red", "green")
+
+# Create a color vector based on species
+species_colors <- cols[as.numeric(iris$Species)]
+
+# Create the plot
+plot(iris$Petal.Length, iris$Petal.Width, 
+     xlab = "Petal Length", 
+     ylab = "Petal Width", 
+     main = "Petal length vs width", 
+     col = species_colors, 
+     pch = 19)
+
+# Add legend
+legend("topright", 
+       legend = levels(iris$Species), 
+       col = cols, 
+       pch = 19, 
+       title = "Species")
+
+
+```
+
+## Variables' Overview
+
+Here, we have plotted a scatter plot between Petal length and Petal width, coloured by different species, trying to find some patterns. A quick rundown of the 2 variables in question:-
+
+::: columns
+::: {.column width="50%"}
+Summary of Petal Length:
+
+```{r}
+#| label: mean-speed
+#| echo: false
+as.data.frame(t(summary(iris$Petal.Length)))[,-1]
+```
+:::
+
+::: {.column width="50%"}
+Summary of Petal Width:
+
+```{r}
+#| label: hist-speed
+#| echo: false
+as.data.frame(t(summary(iris$Petal.Width)))[,-1]
+```
+:::
+:::
+
+\vspace{4 mm}
+
+A quick analysis of the graph is as follows:-
+
+## Analysis
+
+1. From the graph, there appears to be a strong positive correlation between petal legth and petal width. \vspace{2 mm}
+2. Different species of flowers displays different characterisics.\vspace{2 mm}
+3. [Setosa]{style="color: blue;"} generally has lower Petal length and Petal width comparatively. [Versicolor]{style="color: red;"} has higher Petal Length and Petal width compared to [Setosa]{style="color: blue;"} but generally lesser than [Virginica]{style="color: green;"}. [Viriginica]{style="color: green;"} generally tends to have the highest Petal legth and width amongst the `r length(table(iris$Species))` species considered.\vspace{2 mm}
+4. More details about the dataset can be found [here](https://en.wikipedia.org/wiki/Iris_flower_data_set)
+
+
+
+
+
+
+
+
+
+
+
+
+
