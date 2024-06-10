@@ -48,13 +48,13 @@ data(iris)
 #| echo: false
 #| eval: true
 
-# Define the colors for each species
+# Defining the colors for each species
 cols <- c("blue", "red", "green")
 
-# Create a color vector based on species
+# Creating a color vector based on species
 species_colors <- cols[as.numeric(iris$Species)]
 
-# Create the plot
+# Creating the plot
 plot(iris$Petal.Length, iris$Petal.Width, 
      xlab = "Petal Length", 
      ylab = "Petal Width", 
@@ -62,7 +62,7 @@ plot(iris$Petal.Length, iris$Petal.Width,
      col = species_colors, 
      pch = 19)
 
-# Add legend
+# Adding legend
 legend("topright", 
        legend = levels(iris$Species), 
        col = cols, 
@@ -116,13 +116,13 @@ A quick analysis of the graph is as follows:-
 #| echo: false
 #| eval: true
 
-# Define the colors for each species
+# Defining the colors for each species
 cols <- c("blue", "red", "green")
 
-# Create a color vector based on species
+# Creating a color vector based on species
 species_colors <- cols[as.numeric(iris$Species)]
 
-# Create the plot
+# Creating the plot
 plot(iris$Sepal.Length, iris$Sepal.Width, 
      xlab = "Sepal Length", 
      ylab = "Sepal Width", 
@@ -130,7 +130,7 @@ plot(iris$Sepal.Length, iris$Sepal.Width,
      col = species_colors, 
      pch = 19)
 
-# Add legend
+# Adding legend
 legend("topright", 
        legend = levels(iris$Species), 
        col = cols, 
